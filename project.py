@@ -48,12 +48,16 @@ def create_pdf():
     pdf.add_page()
     pdf.set_line_width(0.5)
     pdf.line(x1=105, y1=0, x2=105, y2=297)
+    
     for i in range(1,6):
         y = 49.5 * i
         print(y)
         pdf.line(x1=0, y1=y, x2=210, y2=y)
     img = qrcode.make(f"https://www.noahcompendium.co.uk/?id=-480155&template=template_printview")
     pdf.image(img.get_image(), x=5, y=5, w=30, h=30)
+
+    pdf.set_font("Helvetica", size=26, style="B")
+    pdf.text(x=10, y=45, txt="Scan Here")
 
     pdf.output("test.pdf")
 
