@@ -54,13 +54,55 @@ def create_pdf():
         print(y)
         pdf.line(x1=0, y1=y, x2=210, y2=y)
     img = qrcode.make(f"https://www.noahcompendium.co.uk/?id=-480155&template=template_printview")
-    pdf.image(img.get_image(), x=5, y=5, w=30, h=30)
+    pdf.image(img.get_image(), x=5, y=10, w=35, h=35)
 
-    pdf.set_font("Helvetica", size=26, style="B")
-    pdf.text(x=10, y=45, txt="Scan Here")
+    pdf.set_font("Helvetica", size=16, style="B")
+    pdf.text(x=8, y=10, text="Scan here for drug datasheet")
+
+    pdf.set_xy(x=40, y=15)
+    current_font = 20
+    pdf.set_font("Helvetica", size=current_font)
+    string = f"Kesium® 40mg/10mg & 50mg/12.5mg chewable tablets for cats & dogs and Kesium® 200mg/50mg, 400mg/100mg & 500mg/125mg chewable tablets for dogs"
+    while pdf.get_string_width(string) > 240:
+        current_font -= 1
+        pdf.set_font("Helvetica", size=current_font)
+    pdf.multi_cell(w=60, text=string, align="C", max_line_height=pdf.font_size)
+
+    pdf.set_xy(x=40, y=38)
+    current_font = 30
+    pdf.set_font("Helvetica", size=current_font)
+    while pdf.get_string_width(f"noahcompendium.co.uk/?id=-458494") > 60:
+        current_font -= 1
+        pdf.set_font("Helvetica", size=current_font)
+    pdf.cell(w=60, text="noahcompendium.co.uk/?id=-458494", align="C")
+
+    
+
+
+    pdf.image(img.get_image(), x=110, y=10, w=35, h=35)
+
+    pdf.set_font("Helvetica", size=16, style="B")
+    pdf.text(x=113, y=10, text="Scan here for drug datasheet")
+
+    pdf.set_xy(x=145, y=15)
+    current_font = 20
+    pdf.set_font("Helvetica", size=current_font)
+    string = f"Kesium® 40mg/10mg & 50mg/12.5mg chewable tablets for cats & dogs and Kesium® 200mg/50mg, 400mg/100mg & 500mg/125mg chewable tablets for dogs"
+    while pdf.get_string_width(string) > 240:
+        current_font -= 1
+        pdf.set_font("Helvetica", size=current_font)
+    pdf.multi_cell(w=60, text=string, align="C", max_line_height=pdf.font_size)
+
+    pdf.set_xy(x=145, y=38)
+    current_font = 30
+    pdf.set_font("Helvetica", size=current_font)
+    while pdf.get_string_width(f"noahcompendium.co.uk/?id=-458494") > 60:
+        current_font -= 1
+        pdf.set_font("Helvetica", size=current_font)
+    pdf.cell(w=60, text="noahcompendium.co.uk/?id=-458494", align="C")
+
 
     pdf.output("test.pdf")
-
     
 
 if __name__ == "__main__":
