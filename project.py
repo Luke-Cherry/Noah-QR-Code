@@ -88,7 +88,7 @@ def create_pdf(link, string, img):
             pdf.cell(w=60, text=f"noahcompendium.co.uk/?id=-{link}", align="C")
 
     #Creates file in datasheet folder
-    file_name = re.sub(r'[/\\:*?"<>|]', '', string)
+    file_name = re.sub(r'[/\\:*?"<>|]', '-', string.replace('\n', ''))
     pdf.output(f"datasheets/{file_name}.pdf")
     
 
