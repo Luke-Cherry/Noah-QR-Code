@@ -12,8 +12,6 @@ This program was developed as RCVS requires that all split pack medications are 
 
 ![](/images/examplepdf.png)
 
-[![](https://img.youtube.com/vi/oYjx1-0-5A0/0.jpg)](https://www.youtube.com/watch?v=oYjx1-0-5A0)
-
 ![](/images/examplegif.gif)
 
 
