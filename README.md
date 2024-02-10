@@ -10,11 +10,11 @@ This program was developed as RCVS requires that all split pack medications are 
 
 ### Examples:
 
-![](/images/examplepdf.png)
+![](images/examplepdf.png)
 
-![](/images/examplegif.gif)
-
-
+<video controls>
+  <source src="images/examplemp4.mp4" type="video/mp4">
+</video>
 
 
 
