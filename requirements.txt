@@ -1,0 +1,4 @@
+fpdf2==2.7.7
+pyfiglet==1.0.2
+pytest==8.0.0
+qrcode==7.4.2
